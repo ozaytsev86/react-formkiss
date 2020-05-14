@@ -4,7 +4,6 @@ import FormAdvanced from './FormAdvanced/FormAdvanced';
 import FormWithInitialValue from './FormWithInitialValue/FormWithInitialValue';
 import FormWithValidation from './FormWithValidation/FormWithValidation';
 import FormWithResetOnSubmitSuccess from './FormWithResetOnSubmitSuccess/FormWithResetOnSubmitSuccess';
-import FormikExample from './FormikExample/FormikExample';
 
 export default { title: 'Examples' };
 
@@ -70,11 +69,5 @@ export const WithResetOnSubmitSuccess = () => {
       <FormWithResetOnSubmitSuccess onSubmit={handleOnSubmit}/>
       <p>Submitted form: {JSON.stringify(submittedForm)}</p>
     </>
-  );
-};
-
-export const WithFormik = () => {
-  return (
-    <FormikExample/>
   );
 };
