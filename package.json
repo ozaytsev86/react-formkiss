@@ -1,0 +1,23 @@
+{
+  "name": "react-formkiss",
+  "version": "1.0.0",
+  "description": "React simple form",
+  "main": "index.js",
+  "author": "Olek Zaytsev",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@storybook/react": "^5.3.18",
+    "babel-loader": "^8.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "storybook": "^5.3.18"
+  },
+  "dependencies": {
+    "formik": "^2.1.4",
+    "yup": "^0.28.5"
+  }
+}
