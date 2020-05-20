@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import {useFormField} from '../../src/hooks/UseFormField';
 
-export const Field = props => {
-  const {formField, onChangeFormField} = useFormField({validate: props.validate});
+export const Field = ({name, isDirtyForm, validate, onChangeField}) => {
+  const {formField, onChangeFormField} = useFormField({validate});
 
   useEffect(() => {
-    onChangeFormField(formField.value, props.isDirtyForm);
-  }, [props.isDirtyForm]);
+    onChangeFormField(formField.value, isDirtyForm);
+  }, [isDirtyForm]);
 
   useEffect(() => {
-    props.onChange(props.name, formField.value);
+    onChangeField(name, formField.value);
   }, [formField.value]);
 
   return (
@@ -17,7 +17,7 @@ export const Field = props => {
       <input
         type="text"
         value={formField.value}
-        onChange={e => onChangeFormField(e.target.value, props.isDirtyForm)}
+        onChange={e => onChangeFormField(e.target.value, isDirtyForm)}
       />
       {formField.error && <p>{formField.error}</p>}
     </>

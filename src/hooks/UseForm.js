@@ -24,5 +24,5 @@ export function useForm({initialForm = {}, validateAll = null, onSubmit = null})
       onSubmit(formRef.current);
     }
   };
-  return {isDirtyForm, onChangeField, onSubmitForm, resetForm};
+  return {isValid, isDirtyForm, onChangeField, onSubmitForm, resetForm};
 }

@@ -2,27 +2,19 @@ import React from 'react';
 
 import {useForm} from '../../src/hooks/UseForm';
 import {Field} from './Field';
+import {validateAll, hasErrorsField1} from './validations';
 
-const FormWithValidation = (props) => {
-  const handleValidateAll = (form) => {
-    let isValid = true;
-    const isAnyFieldInvalid = hasErrorsField1(form.field1);
-    if(isAnyFieldInvalid) isValid = false;
-    return isValid;
-  };
-
-  const hasErrorsField1 = (value) => {
-    if(!value) return 'The field is required';
-    else if (value.length < 5) return 'The field should have 5 characters';
-    return false;
-  };
+const FormWithValidation = ({onSubmit}) => {
   const handleOnSubmit = (form) => {
     //service.post().then(...)
 
     // this is just for example purpose
-    props.onSubmit(form);
+    onSubmit(form);
   };
-  const {isDirtyForm, onChangeField, onSubmitForm} = useForm({validateAll: handleValidateAll, onSubmit: handleOnSubmit});
+  const {isDirtyForm, onChangeField, onSubmitForm} = useForm({
+    validateAll,
+    onSubmit: handleOnSubmit
+  });
 
   return (
     <form noValidate onSubmit={onSubmitForm}>
@@ -30,7 +22,7 @@ const FormWithValidation = (props) => {
         <Field
           name="field1"
           isDirtyForm={isDirtyForm}
-          onChange={onChangeField}
+          onChangeField={onChangeField}
           validate={hasErrorsField1}
         />
       </div>

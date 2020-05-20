@@ -35,7 +35,7 @@ const FormAdvanced = (props) => {
         <Field
           name="field1"
           isDirtyForm={isDirtyForm}
-          onChange={onChangeField}
+          onChangeField={onChangeField}
           validate={hasErrorsField1}
         />
       </div>
@@ -43,7 +43,7 @@ const FormAdvanced = (props) => {
         <Field
           name="field2"
           isDirtyForm={isDirtyForm}
-          onChange={onChangeField}
+          onChangeField={onChangeField}
           validate={hasErrorsField2}
         />
       </div>
